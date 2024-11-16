@@ -46,7 +46,7 @@ To get started with the project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone [<repository-url>](https://github.com/oguzhan18/visionpallet)
+   git clone https://github.com/oguzhan18/visionpallet
    ```
 
 2. Navigate to the project directory:
