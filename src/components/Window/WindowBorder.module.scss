@@ -1,0 +1,91 @@
+$border-radius: 20px;
+.border {
+  position: absolute;
+  background-color: var(--window-outline);
+  border-radius: $border-radius;
+  z-index: -1;
+  // overflow: hidden;
+}
+
+$handle-offset: -5px;
+
+@mixin border-corner {
+  width: calc($border-radius - $handle-offset);
+  height: calc($border-radius - $handle-offset);
+  // background-color: red;
+  z-index: 1;
+}
+
+.topLeft {
+  @include border-corner;
+  cursor: nwse-resize;
+  position: absolute;
+  top: $handle-offset;
+  left: $handle-offset;
+  border-radius: $border-radius 0 0 0;
+}
+
+.topRight {
+  @include border-corner;
+  cursor: nesw-resize;
+  position: absolute;
+  top: $handle-offset;
+  right: $handle-offset;
+  border-radius: 0 $border-radius 0 0;
+}
+
+.bottomLeft {
+  @include border-corner;
+  cursor: nesw-resize;
+  position: absolute;
+  bottom: $handle-offset;
+  left: $handle-offset;
+  border-radius: 0 0 0 $border-radius;
+}
+
+.bottomRight {
+  @include border-corner;
+  cursor: nwse-resize;
+  position: absolute;
+  bottom: $handle-offset;
+  right: $handle-offset;
+  border-radius: 0 0 $border-radius 0;
+}
+
+@mixin border-side($side) {
+  // background-color: rgb(255, 234, 0);
+  #{$side}: calc(100% - $border-radius);
+  @if $side == 'width' {
+    height: 2px;
+  } @else {
+    width: 2px;
+  }
+}
+
+.top {
+  @include border-side(width);
+  position: absolute;
+  top: $handle-offset;
+  cursor: ns-resize;
+}
+
+.bottom {
+  @include border-side(width);
+  position: absolute;
+  bottom: $handle-offset;
+  cursor: ns-resize;
+}
+
+.left {
+  @include border-side(height);
+  position: absolute;
+  left: $handle-offset;
+  cursor: ew-resize;
+}
+
+.right {
+  @include border-side(height);
+  position: absolute;
+  right: $handle-offset;
+  cursor: ew-resize;
+}

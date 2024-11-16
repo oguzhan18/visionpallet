@@ -1,0 +1,51 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+}
+
+$handle-offset: -15px;
+
+.point {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #acacac;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: grab;
+}
+
+.topLeft {
+  position: absolute;
+  top: $handle-offset;
+  left: $handle-offset;
+}
+
+.topRight {
+  top: $handle-offset;
+  right: $handle-offset;
+}
+
+.bottomLeft {
+  bottom: $handle-offset;
+  left: $handle-offset;
+}
+
+.bottomRight {
+  bottom: $handle-offset;
+  right: $handle-offset;
+}
+
+.rotationOutline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ff0000;
+  pointer-events: none;
+}

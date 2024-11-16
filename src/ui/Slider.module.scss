@@ -1,0 +1,142 @@
+.slider {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white-65);
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: var(--font--2);
+    }
+    .value {
+      color: var(--white-45);
+      font-size: var(--font--2);
+    }
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 10;
+  background-color: var(--tooltip-background-color);
+  border: 1px solid var(--tooltip-border);
+  box-shadow: var(--dropdown-list-box-shadow);
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  p {
+    color: var(--white-65);
+    font-size: var(--font--2);
+    line-height: 1.5;
+  }
+}
+
+.tooltipIcon {
+  background-color: hsla(
+    calc(var(--hue)),
+    calc(var(--saturation) + 15%),
+    calc(var(--lightness) + 17%),
+    1
+  );
+  border: 1px solid
+    hsla(
+      calc(var(--hue)),
+      calc(var(--saturation) + 15%),
+      calc(var(--lightness) + 30%),
+      1
+    );
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  svg {
+    transform: translateY(0.5px);
+  }
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  // border: 1px solid red;
+  border-radius: 999px;
+  height: 15px;
+  background-color: hsla(
+    calc(var(--hue) + 18),
+    calc(var(--saturation) + 65%),
+    calc(var(--lightness) + 12%),
+    1
+  );
+  border: 1px solid
+    hsla(
+      calc(var(--hue) + 20),
+      calc(var(--saturation) + 85%),
+      calc(var(--lightness) + 70%),
+      0.5
+    );
+  display: flex;
+  overflow: hidden;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: hsla(
+    calc(var(--hue) + 18),
+    calc(var(--saturation) + 65%),
+    calc(var(--lightness) + 57%),
+    1
+  );
+  border-radius: 0 999px 999px 0;
+
+  @include mixins.stripeBackground(
+    hsla(
+      calc(var(--hue) + 18),
+      calc(var(--saturation) + 65%),
+      calc(var(--lightness) + 57%),
+      1
+    ),
+    hsla(
+      calc(var(--hue) + 18),
+      calc(var(--saturation) + 65%),
+      calc(var(--lightness) + 53%),
+      1
+    )
+  );
+}
+
+.thumb {
+  transform-origin: 0 0;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  opacity: 0.7;
+  background-color: hsla(
+    calc(var(--hue) + 18),
+    calc(var(--saturation) + 50%),
+    calc(var(--lightness) + 90%),
+    1
+  );
+}

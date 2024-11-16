@@ -1,0 +1,70 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  padding: 15px 20px;
+  h1 {
+    font-size: var(--font-2);
+    color: var(--white);
+  }
+}
+
+.button {
+  border: 1px solid black;
+  border-top: 1px solid
+    hsla(
+      var(--hue),
+      calc(var(--saturation) + 20%),
+      calc(var(--lightness) + 20%),
+      1
+    );
+  background-color: hsla(
+    var(--hue),
+    calc(var(--saturation) + 20%),
+    calc(var(--lightness) + 8%),
+    1
+  );
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: var(--font--2);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.content {
+  background-color: hsla(
+    var(--hue),
+    calc(var(--saturation) + 20%),
+    calc(var(--lightness) + 5%),
+    1
+  );
+  border: 1px solid
+    hsla(
+      var(--hue),
+      calc(var(--saturation) + 20%),
+      calc(var(--lightness) + 14%),
+      1
+    );
+  border-top: 1px solid
+    hsla(
+      var(--hue),
+      calc(var(--saturation) + 20%),
+      calc(var(--lightness) + 20%),
+      1
+    );
+
+  border-radius: 14px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  p {
+    font-size: var(--font--2);
+  }
+}

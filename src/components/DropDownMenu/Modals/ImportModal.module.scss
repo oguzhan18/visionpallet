@@ -1,0 +1,80 @@
+.modal {
+  background-color: var(--dropdown-list-background-color);
+  padding: 10px;
+  width: fit-content;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+  }
+}
+
+.chooseFileButton {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  border-radius: 5px;
+  font-size: 16px;
+  overflow: hidden;
+  position: relative;
+  .iconContainer {
+    padding: 10px;
+  }
+  &[data-role='uploaded'] {
+    border: 1px solid var(--success-color);
+    cursor: pointer;
+    svg {
+      stroke: var(--success-color);
+    }
+    .iconContainer {
+      border-right: 1px solid var(--success-color);
+    }
+    p {
+      color: var(--success-color);
+    }
+  }
+  &[data-role='not-uploaded'] {
+    $color: hsla(215, 100%, 55%, 1);
+    border: 1px dashed $color;
+    cursor: pointer;
+    svg {
+      fill: $color;
+    }
+    .iconContainer {
+      border-right: 1px dashed $color;
+    }
+    p {
+      color: $color;
+    }
+  }
+  .textContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  > input {
+    position: absolute;
+    transform: scale(9999);
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.importButton {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  position: relative;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  color: var(--white);
+  cursor: pointer;
+}

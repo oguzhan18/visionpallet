@@ -1,0 +1,20 @@
+.wrapper {
+  padding-left: 20px;
+  [data-role='dropdown-menu'] {
+    p {
+      z-index: -1;
+    }
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.pinIcon {
+  position: relative;
+  z-index: 999999;
+  svg {
+    z-index: 99999;
+    flex-shrink: 0;
+    opacity: 1;
+  }
+}

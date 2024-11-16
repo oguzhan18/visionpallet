@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  padding: 10px 20px;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--toolbar-background);
+  border: 1px solid var(--toolbar-border);
+  z-index: var(--toolbar-z-index);
+  box-shadow: var(--window-box-shadow);
+  backdrop-filter: blur(5px);
+  * {
+    color: var(--white);
+  }
+  button {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.colorButton {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.colorInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sliderWrapper {
+  z-index: var(--toolbar-z-index);
+  bottom: 60px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: unset;
+  padding: 20px;
+}

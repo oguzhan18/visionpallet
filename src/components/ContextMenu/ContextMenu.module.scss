@@ -1,0 +1,45 @@
+$padding: 10px;
+$border-radius: 3px;
+$border-radius-outer: calc(#{$border-radius} + #{$padding});
+
+.container {
+  position: absolute;
+  width: 200px;
+  height: fit-content;
+  background: var(--context-menu-background);
+  border: 1px solid var(--context-menu-border);
+  border-radius: $border-radius-outer;
+  box-shadow: var(--dropdown-list-box-shadow);
+  z-index: 99999;
+  overflow: hidden;
+  padding: $padding;
+}
+
+.item {
+  @include mixins.dropdownHoverBackground;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding;
+  border-radius: $border-radius;
+  cursor: pointer;
+  > p {
+    font-size: 14px;
+  }
+  > svg {
+    font-size: 16px;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: hsla(
+    var(--hue),
+    var(--saturation),
+    calc(var(--lightness) + 10%),
+    1
+  );
+  margin: $padding 0;
+}
